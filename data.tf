@@ -18,7 +18,7 @@ resource "null_resource" "install_docker" {
   connection {
     type        = "ssh"
     host        = data.google_compute_instance.existing_vm.network_interface[0].access_config[0].nat_ip
-    user        = "ubuntu"  # Replace with your VM's username
+    user        = "saitejatamiri_gmail_com@tamiri-candy"  # Replace with your VM's username
     private_key = file("~/.ssh/your_private_key")  # Path to your SSH private key
   }
 
