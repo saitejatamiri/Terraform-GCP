@@ -1,16 +1,11 @@
 # Reference your existing GCP project
-data "google_project" "current" {
+data "new-project-462710" "New Project" {
 }
 
 # Reference your existing Compute Engine instance
 data "google_compute_instance" "existing_vm" {
-  name     = "your-existing-vm-name"  # Replace with your actual VM name
+  name     = "tamiri-candy"  # Replace with your actual VM name
   zone     = "us-central1-a"          # Replace with your VM's zone
-}
-
-# Reference your existing service account if needed
-data "google_service_account" "existing_sa" {
-  account_id = "your-service-account-id"
 }
 
 # Use a null_resource with a remote-exec provisioner to install Docker
