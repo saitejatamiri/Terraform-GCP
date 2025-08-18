@@ -5,7 +5,7 @@ resource "google_compute_instance" "vm_instance" {
 
   boot_disk {
     initialize_params {
-      image = "Ubuntu"
+      image = "ubuntu-os-cloud/ubuntu-2204-lts"
     }
   }
 
