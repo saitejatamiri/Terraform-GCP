@@ -5,7 +5,7 @@ resource "google_compute_instance" "vm_instance" {
 
   boot_disk {
     initialize_params {
-      image = "Ubuntu 25.04 Minimal"
+      image = "Ubuntu"
     }
   }
 
@@ -13,6 +13,18 @@ resource "google_compute_instance" "vm_instance" {
     network       = "default"
     access_config {}
   }
+}
+resource "google_compute_firewall" "ssh" {
+  name    = "allow-ssh"
+  network = "default"
+
+  allow {
+    protocol = "tcp"
+    ports    = ["22"]
+  }
+
+  # Allow traffic from everywhere (restrict as needed)
+  source_ranges = ["0.0.0.0/0"]
 }
 
 resource "google_storage_bucket" "bucket" {
